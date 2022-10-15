@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes as RoutesWrapper, Route } from "react-router-dom";
 
-import Spinner from "components/spinner/Spinner";
+import Spinner from "components/shared/spinner/Spinner";
 import MainPage from "pages/main-page/MainPage";
 
 const LazyDetailsPage = React.lazy(
-  () => import("pages/pokemon-details-page/PokemonDetailsPage"),
+  () => import("pages/details-page/DetailsPage"),
 );
 
 function Routes() {
@@ -13,8 +13,7 @@ function Routes() {
     <RoutesWrapper>
       <Route path="/" element={<MainPage />} />
       <Route
-        // pokemonId if item fetched by id
-        path="/:pokemonId"
+        path="/:pokemonName"
         element={
           <React.Suspense fallback={<Spinner />}>
             <LazyDetailsPage />

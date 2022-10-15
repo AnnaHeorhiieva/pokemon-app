@@ -1,0 +1,7 @@
+.mainDetailsBody {
+  width: 100%;
+  padding: 0;
+  @media (min-width: 1200px) {
+    max-width: 100%;
+  }
+}

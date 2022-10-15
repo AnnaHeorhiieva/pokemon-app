@@ -1,0 +1,56 @@
+.searchFieldSection {
+  width: 70%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+  @media (min-width: 1200px) {
+    max-width: 50%;
+  }
+}
+
+.searchField {
+  width: 100%;
+  & :global(.MuiOutlinedInput-root) {
+    background-color: #ffffff;
+    height: 46px;
+    color: #222433;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.7rem;
+    border-radius: 40px;
+    padding-right: 110px;
+    & :global(.MuiOutlinedInput-input) {
+      height: 0;
+    }
+    & :global(.MuiOutlinedInput-notchedOutline) {
+      border: none;
+    }
+  }
+  @media (min-width: 1200px) {
+    max-width: 100%;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  padding: 8px 30px;
+  background: #f2726c;
+  border-radius: 30px;
+  transition: 0.3s ease-out;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  &:hover {
+    background-color: #f05e56;
+    transition: 0.3s ease-in-out;
+  }
+}

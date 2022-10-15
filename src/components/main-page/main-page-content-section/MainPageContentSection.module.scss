@@ -1,0 +1,26 @@
+.mainPageContentSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  height: auto;
+  padding-top: 80px;
+  @media (min-width: 1200px) {
+    max-width: 100%;
+  }
+}
+
+.mainPageContent {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 2%;
+  @media (min-width: 1200px) {
+    max-width: 100vw;
+  }
+}

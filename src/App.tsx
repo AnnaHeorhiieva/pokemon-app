@@ -4,12 +4,12 @@ import { StyledEngineProvider } from "@mui/material/styles";
 
 import Container from "@mui/material/Container";
 
-import styles from "./App.module.scss";
+import "./App.scss";
 
 function App() {
   return (
     <StyledEngineProvider injectFirst>
-      <Container className={styles.appContainer}>
+      <Container className="app-container">
         <Routes />
       </Container>
     </StyledEngineProvider>

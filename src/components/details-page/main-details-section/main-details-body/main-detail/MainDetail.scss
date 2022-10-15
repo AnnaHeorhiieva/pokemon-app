@@ -1,0 +1,44 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.main-detail-container {
+  @include mixins.flex-container(row, flex-start, center);
+  @include mixins.box-spacing(5% 7% 5% 7%, 0 0 4vh 0);
+  min-height: fit-content;
+  background-color: #ffffff;
+  border-radius: 40px;
+
+  .main-detail-icon-container {
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    padding: 0;
+
+    .main-detail-icon-background {
+      @include mixins.flex-container(row, center, center);
+      width: 45px;
+      height: 45px;
+      background-color: variables.$accent-bg-color;
+      border-radius: 50%;
+
+      svg {
+        font-size: 1.2rem;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .main-detail-info-container {
+    @include mixins.flex-container(column, space-between, flex-start);
+    padding: 0;
+
+    .main-detail {
+      @include mixins.font-styles(0.7rem, 600);
+      &:first-child {
+        color: variables.$font-color-pale;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

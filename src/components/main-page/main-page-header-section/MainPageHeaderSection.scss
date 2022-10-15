@@ -1,0 +1,11 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.main-page-header-section {
+  @include mixins.flex-container(row, flex-start, center);
+  background-color: variables.$secondary-bg-color;
+  position: fixed;
+  height: min-content;
+  padding: 12px 23px;
+  z-index: 100;
+}

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Card from "@mui/material/Card";
 
-import styles from "./PokemonCard.module.scss";
+import "./PokemonCard.scss";
 
 interface PokemonCardProps {
   pokemonName: string;
@@ -17,7 +17,7 @@ function PokemonCard({ pokemonName }: PokemonCardProps) {
   }
 
   return (
-    <Card className={styles.pokemonCard} onClick={handleCardClick}>
+    <Card className="pokemon-card" onClick={handleCardClick}>
       {pokemonName}
     </Card>
   );

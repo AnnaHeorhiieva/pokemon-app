@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import MainDetailsSection from "components/details-page/main-details-section/MainDetailsSection";
 import SecondaryDetailsSection from "components/details-page/secondary-details-section/SecondaryDetailsSection";
 
-import styles from "./DetailsPage.module.scss";
+import "./DetailsPage.scss";
 
 function DetailsPage() {
   const dispatch = useAppDispatch();
@@ -27,7 +27,7 @@ function DetailsPage() {
   }, [dispatch, pokemonName]);
 
   return (
-    <Container className={styles.detailsPageContainer}>
+    <Container className="details-page-container">
       <MainDetailsSection mainDetails={mainDetails} />
       <SecondaryDetailsSection secondaryDetails={secondaryDetails} />
     </Container>

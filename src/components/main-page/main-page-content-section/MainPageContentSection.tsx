@@ -6,7 +6,7 @@ import { pokemonsListSelector } from "store/pokemons/selectors";
 import Container from "@mui/material/Container";
 import PokemonCard from "./pokemon-card/PokemonCard";
 
-import styles from "./MainPageContentSection.module.scss";
+import "./MainPageContentSection.scss";
 
 function MainPageContentSection() {
   const pokemonsList = useAppSelector(pokemonsListSelector);
@@ -16,10 +16,8 @@ function MainPageContentSection() {
   ));
 
   return (
-    <Container className={styles.mainPageContentSection}>
-      <Container className={styles.mainPageContent}>
-        {renderPokemonCards}
-      </Container>
+    <Container className="main-page-content-section">
+      <Container className="main-page-content">{renderPokemonCards}</Container>
     </Container>
   );
 }

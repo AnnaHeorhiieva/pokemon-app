@@ -7,7 +7,7 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-import styles from "./MainDetailsHeader.module.scss";
+import "./MainDetailsHeader.scss";
 
 interface MainDetailsHeadeProps {
   mainHeaderDetails: MainHeaderPokemonDetails;
@@ -17,12 +17,12 @@ function MainDetailsHeader({ mainHeaderDetails }: MainDetailsHeadeProps) {
   const { photo, name } = mainHeaderDetails;
 
   return (
-    <Container className={styles.mainDetailsHeader}>
-      <Link to="/" className={styles.mainDetailsPagePointer}>
+    <Container className="main-details-header">
+      <Link to="/" className="main-details-page-pointer">
         <NavigateBeforeIcon />
       </Link>
-      <img src={photo} alt={name} className={styles.pokemonPhoto} />
-      <Typography className={styles.pokemonName}>{name}</Typography>
+      <img src={photo} alt={name} className="pokemon-photo" />
+      <Typography className="pokemon-name">{name}</Typography>
     </Container>
   );
 }

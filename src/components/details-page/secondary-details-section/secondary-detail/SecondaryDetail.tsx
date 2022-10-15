@@ -7,7 +7,7 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import SecondaryDetailItem from "./secondary-detail-item/SecondaryDetailItem";
 
-import styles from "./SecondaryDetail.module.scss";
+import "./SecondaryDetail.scss";
 
 interface SecondaryDetailProps {
   secondaryDetailTitle: string;
@@ -31,12 +31,12 @@ function SecondaryDetail({
   );
 
   return (
-    <Container className={styles.secondaryDetailContainer}>
-      <Typography className={styles.secondaryDetailHeading}>
+    <Container className="secondary-detail-container">
+      <Typography className="secondary-detail-heading">
         {secondaryDetailTitle}
       </Typography>
-      <Divider className={styles.secondaryDetailDivider} />
-      <Container className={styles.secondaryDetailItemsContainer}>
+      <Divider className="secondary-detail-divider" />
+      <Container className="secondary-detail-items-container">
         {renderSecondaryDetailItems}
       </Container>
     </Container>

@@ -71,3 +71,9 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+.MuiContainer-root {
+  @media (min-width: 1200px) {
+    max-width: 100%;
+  }
+}

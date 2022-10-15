@@ -1,0 +1,9 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.secondary-detail-item {
+  @include mixins.font-styles(variables.$default-font-size, 600);
+  border: 1px solid variables.$accent-border-color;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}

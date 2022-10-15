@@ -6,7 +6,7 @@ import { addIndexToString } from "utils/helpers/addIndexToString";
 import Container from "@mui/material/Container";
 import SecondaryDetail from "./secondary-detail/SecondaryDetail";
 
-import styles from "./SecondaryDetailsSection.module.scss";
+import "./SecondaryDetailsSection.scss";
 
 interface SecondaryDetailsSectionProps {
   secondaryDetails: SecondaryPokemonDetails;
@@ -31,7 +31,7 @@ function SecondaryDetailsSection({
   );
 
   return (
-    <Container className={styles.secondaryDetailsSection}>
+    <Container className="secondary-details-section">
       {renderSecondaryDetails}
     </Container>
   );

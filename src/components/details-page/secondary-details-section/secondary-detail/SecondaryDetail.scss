@@ -1,0 +1,27 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.secondary-detail-container {
+  @include mixins.flex-container(column, flex-start, flex-start);
+  width: 100%;
+  margin-bottom: 27px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .secondary-detail-heading {
+    $secondary-detail-heading-font: 0.9rem, 600, null, null, capitalize, 2rem;
+    @include mixins.font-styles($secondary-detail-heading-font...);
+  }
+
+  .secondary-detail-divider {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 10px;
+  }
+
+  .secondary-detail-items-container {
+    @include mixins.flex-container(row, flex-start, center, wrap);
+    padding: 0;
+  }
+}

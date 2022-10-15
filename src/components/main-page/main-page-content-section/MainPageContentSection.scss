@@ -1,0 +1,18 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.main-page-content-section {
+  @include mixins.flex-container(row, center, flex-start);
+  height: auto;
+  padding: 80px 0 0;
+  background-color: variables.$main-bg-color;
+
+  .main-page-content {
+    @include mixins.flex-container(column, flex-start, flex-start);
+    flex-basis: auto;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 20px 2%;
+  }
+}

@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 import MainPageContentSection from "components/main-page/main-page-content-section/MainPageContentSection";
 import MainPageHeaderSection from "components/main-page/main-page-header-section/MainPageHeaderSection";
 
-import styles from "./MainPage.module.scss";
+import "./MainPage.scss";
 
 function MainPage() {
   const dispatch = useAppDispatch();
@@ -18,7 +18,7 @@ function MainPage() {
   }, [dispatch]);
 
   return (
-    <Container className={styles.mainPageContainer}>
+    <Container className="main-page-container">
       <MainPageHeaderSection />
       <MainPageContentSection />
     </Container>

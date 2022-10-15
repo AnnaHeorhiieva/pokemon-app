@@ -1,0 +1,15 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.pokemon-card {
+  $pokemon-card-font: 0.8rem, 700, variables.$accent-bg-color, null, capitalize;
+  @include mixins.font-styles($pokemon-card-font...);
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  box-shadow: none;
+  background-color: variables.$main-bg-color;
+  border: 1px solid variables.$accent-border-color;
+  cursor: pointer;
+}

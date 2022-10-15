@@ -1,6 +1,56 @@
-@mixin flexContainer($direction, $justify, $align) {
+@use "sass:list";
+@use "utils/styles/variables";
+
+@mixin flex-container(
+  $direction: row,
+  $justify: center,
+  $align: center,
+  $flex-wrap: nowrap
+) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin box-spacing($paddings: 0 0 0 0, $margins: 0 0 0 0) {
+  $sides: top right bottom left;
+
+  @each $side in $sides {
+    $index: list.index($sides, $side);
+    padding-#{$side}: list.nth($paddings, $index);
+    margin-#{$side}: list.nth($margins, $index);
+  }
+}
+
+@mixin font-styles(
+  $size: variables.$default-font-size,
+  $weight: variables.$default-font-weight,
+  $color: variables.$default-font-color,
+  $decoration: none,
+  $transform: none,
+  $line-height: normal
+) {
+  font-family: variables.$main-font-family;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  text-decoration: $decoration;
+  text-transform: $transform;
+  line-height: $line-height;
+}
+
+@mixin on-hover(
+  $propertiesOnHover,
+  $transition: variables.$default-transition
+) {
+  transition: $transition;
+  &:hover {
+    transition: $transition;
+    @each $propertyName, $propertyValue in $propertiesOnHover {
+      #{$propertyName}: $propertyValue;
+    }
+  }
 }

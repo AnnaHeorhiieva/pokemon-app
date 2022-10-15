@@ -1,12 +1,19 @@
-$main-bg-color: #fff;
-$main-bg-color-hover: #f0f5f8de;
-$secondary-bg-color: #eceff3;
-$accent-bg-color: #34a08c;
-$button-bg-color: #ffd97d;
-$button-bg-hover: #ffd97d;
+$main-font-family: "Poppins";
 
-$headings-font-color: #061523;
-$normal-font-color: #061523;
-$pale-normal-font-color: #35393d75;
+$main-bg-color: #ffffff;
+$secondary-bg-color: #f7f3f4;
+$accent-bg-color: #f2726c;
+$accent-bg-color-hover: #f05e56;
+$pointer-bg-color-hover: #807c7c24;
 
-$border-color: #e8eaec8a;
+$accent-border-color: #ffbd9e;
+
+$default-font-size: 0.7rem;
+
+$default-font-weight: 400;
+
+$default-font-color: #1e1a20;
+$font-color-pale: #807c7c;
+$input-text-font-color: #222433;
+
+$default-transition: all 0.3s ease-in-out;

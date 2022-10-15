@@ -1,0 +1,50 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.search-field-section {
+  @include mixins.box-spacing();
+  position: relative;
+  width: 70%;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+  @media (min-width: 1200px) {
+    max-width: 50%;
+  }
+
+  .search-field {
+    width: 100%;
+
+    .MuiOutlinedInput-root {
+      $input-font: 0.7rem, 600, variables.$input-text-font-color;
+      @include mixins.font-styles($input-font...);
+      background-color: variables.$main-bg-color;
+      height: 46px;
+      border-radius: 40px;
+      padding-right: 110px;
+
+      .MuiOutlinedInput-input {
+        height: 0;
+      }
+
+      .MuiOutlinedInput-notchedOutline {
+        border: none;
+      }
+    }
+  }
+
+  .search-button {
+    $properties-on-hover: (
+      background-color: variables.$accent-bg-color-hover,
+    );
+    $search-button-font: 0.7rem 700 #ffffff null uppercase;
+    @include mixins.font-styles($search-button-font...);
+    @include mixins.on-hover($properties-on-hover);
+    background-color: variables.$accent-bg-color;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    border-radius: 30px;
+    padding: 8px 30px;
+  }
+}

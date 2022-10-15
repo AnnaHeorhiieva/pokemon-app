@@ -1,0 +1,32 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.main-details-header {
+  @include mixins.flex-container(row, flex-start, center);
+  padding: 0;
+  margin-bottom: 50px;
+
+  .main-details-page-pointer {
+    $properties-on-hover: (
+      background-color: variables.$pointer-bg-color-hover,
+      color: variables.$accent-bg-color-hover,
+    );
+    @include mixins.flex-container(row, center, center);
+    @include mixins.on-hover($properties-on-hover);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: variables.$accent-bg-color;
+  }
+
+  .pokemon-photo {
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  .pokemon-name {
+    $pokemon-name-font: 2rem, 800, variables.$accent-bg-color, null, null, 56px;
+    @include mixins.font-styles($pokemon-name-font...);
+  }
+}

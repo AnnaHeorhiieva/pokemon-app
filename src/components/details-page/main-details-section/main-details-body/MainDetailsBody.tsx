@@ -6,7 +6,7 @@ import { addIndexToString } from "utils/helpers/addIndexToString";
 import Container from "@mui/material/Container";
 import MainDetail from "./main-detail/MainDetail";
 
-import styles from "./MainDetailsBody.module.scss";
+import "./MainDetailsBody.scss";
 
 interface MainDetailsBodyProps {
   mainBodyDetails: MainBodyPokemonDetails;
@@ -32,9 +32,7 @@ function MainDetailsBody({ mainBodyDetails }: MainDetailsBodyProps) {
   );
 
   return (
-    <Container className={styles.mainDetailsBody}>
-      {renderMainDetails}
-    </Container>
+    <Container className="main-details-body">{renderMainDetails}</Container>
   );
 }
 

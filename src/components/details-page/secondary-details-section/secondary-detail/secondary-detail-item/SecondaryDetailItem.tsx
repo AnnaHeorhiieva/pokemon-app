@@ -2,7 +2,7 @@ import React from "react";
 
 import Chip from "@mui/material/Chip";
 
-import styles from "./SecondaryDetailItem.module.scss";
+import "./SecondaryDetailItem.scss";
 
 interface SecondaryDetailItemProps {
   secondaryDetailItem: string;
@@ -15,7 +15,7 @@ function SecondaryDetailItem({
     <Chip
       label={secondaryDetailItem}
       variant="outlined"
-      className={styles.secondaryDetailItem}
+      className="secondary-detail-item"
     />
   );
 }

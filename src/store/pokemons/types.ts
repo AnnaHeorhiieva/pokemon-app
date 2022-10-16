@@ -1,4 +1,4 @@
-import { NamedAPIResource } from "store/pokemon/types";
+import { NamedAPIResource, Pokemon } from "store/pokemon/types";
 
 export interface PokemonsPokeApi {
   count: number;
@@ -7,18 +7,22 @@ export interface PokemonsPokeApi {
   results: NamedAPIResource[];
 }
 
+export interface DetailedPokemons {
+  next: string;
+  results: Pokemon[];
+}
+
 export interface PokemonsState {
-  pokemonsCount: number;
   nextPokemonsPage: string;
-  previousPokemonsPage: string;
-  pokemonsList: NamedAPIResource[];
+  pokemonsList: Pokemon[];
   loading: boolean;
   error: string;
 }
 
 export enum PokemonsActionsTypes {
   FETCH_POKEMONS_PENDING = "pokemons/fetchPokemons/pending",
-  FETCH_POKEMONS_FULFILLED = "pokemons/fetchPokemons/fulfilled",
+  FETCH_POKEMONS_INITIAL_FULFILLED = "pokemons/fetchPokemonsInitial/fulfilled",
+  FETCH_POKEMONS_ON_SCROLL_FULFILLED = "pokemons/fetchPokemonsOnScroll/fulfilled",
   FETCH_POKEMONS_REJECTED = "pokemons/fetchPokemons/rejected",
 }
 
@@ -26,9 +30,14 @@ export interface FetchPokemonsPendingAction {
   type: PokemonsActionsTypes.FETCH_POKEMONS_PENDING;
 }
 
-export interface FetchPokemonsFulfilledAction {
-  type: PokemonsActionsTypes.FETCH_POKEMONS_FULFILLED;
-  payload: PokemonsPokeApi;
+export interface FetchPokemonsInitialFulfilledAction {
+  type: PokemonsActionsTypes.FETCH_POKEMONS_INITIAL_FULFILLED;
+  payload: DetailedPokemons;
+}
+
+export interface FetchPokemonsOnScrollFulfilledAction {
+  type: PokemonsActionsTypes.FETCH_POKEMONS_ON_SCROLL_FULFILLED;
+  payload: DetailedPokemons;
 }
 
 export interface FetchPokemonsRejectedAction {
@@ -36,7 +45,15 @@ export interface FetchPokemonsRejectedAction {
   payload: string;
 }
 
+export type PokemonsSuccessActions =
+  | FetchPokemonsInitialFulfilledAction
+  | FetchPokemonsOnScrollFulfilledAction;
+
+export type SuccessActionCreator = (
+  pokemons: DetailedPokemons,
+) => PokemonsSuccessActions;
+
 export type PokemonsActions =
   | FetchPokemonsPendingAction
-  | FetchPokemonsFulfilledAction
+  | PokemonsSuccessActions
   | FetchPokemonsRejectedAction;

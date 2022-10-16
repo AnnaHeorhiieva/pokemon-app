@@ -1,15 +1,29 @@
 import React from "react";
 
 import BeatLoader from "react-spinners/BeatLoader";
-import Container from "@mui/material/Container";
 
 import "./Spinner.scss";
 
-function Spinner(): JSX.Element {
+interface SpinnerProps {
+  color?: string;
+  size?: number;
+  speedMultiplier?: number;
+  className?: string;
+}
+
+function Spinner({
+  color = "#F2726C",
+  size = 10,
+  speedMultiplier = 1.3,
+  className,
+}: SpinnerProps): JSX.Element {
   return (
-    <Container className="spinner-container">
-      <BeatLoader color="#F2726C" size={10} speedMultiplier={1.3} />
-    </Container>
+    <BeatLoader
+      color={color}
+      size={size}
+      speedMultiplier={speedMultiplier}
+      className={className}
+    />
   );
 }
 

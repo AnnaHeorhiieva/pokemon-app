@@ -1,9 +1,11 @@
+import { Pokemon } from "store/pokemon/types";
 import {
   PokemonsActionsTypes,
   FetchPokemonsPendingAction,
-  FetchPokemonsFulfilledAction,
+  FetchPokemonsInitialFulfilledAction,
+  FetchPokemonsOnScrollFulfilledAction,
   FetchPokemonsRejectedAction,
-  PokemonsPokeApi,
+  DetailedPokemons,
 } from "./types";
 
 export function fetchPokemonsPending(): FetchPokemonsPendingAction {
@@ -12,11 +14,20 @@ export function fetchPokemonsPending(): FetchPokemonsPendingAction {
   };
 }
 
-export function fetchPokemonsFulfilled(
-  pokemons: PokemonsPokeApi,
-): FetchPokemonsFulfilledAction {
+export function fetchPokemonsInitialFulfilled(
+  pokemons: DetailedPokemons,
+): FetchPokemonsInitialFulfilledAction {
   return {
-    type: PokemonsActionsTypes.FETCH_POKEMONS_FULFILLED,
+    type: PokemonsActionsTypes.FETCH_POKEMONS_INITIAL_FULFILLED,
+    payload: pokemons,
+  };
+}
+
+export function fetchPokemonsOnScrollFulfilled(
+  pokemons: DetailedPokemons,
+): FetchPokemonsOnScrollFulfilledAction {
+  return {
+    type: PokemonsActionsTypes.FETCH_POKEMONS_ON_SCROLL_FULFILLED,
     payload: pokemons,
   };
 }

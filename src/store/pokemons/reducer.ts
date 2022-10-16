@@ -1,9 +1,7 @@
 import { PokemonsState, PokemonsActions, PokemonsActionsTypes } from "./types";
 
 const initialState = {
-  pokemonsCount: 0,
   nextPokemonsPage: "",
-  previousPokemonsPage: "",
   pokemonsList: [],
   loading: false,
   error: "",
@@ -19,22 +17,26 @@ export default function pokemonsReducer(
         ...state,
         loading: true,
       };
-    case PokemonsActionsTypes.FETCH_POKEMONS_FULFILLED:
+    case PokemonsActionsTypes.FETCH_POKEMONS_INITIAL_FULFILLED:
       return {
         ...state,
-        pokemonsCount: action.payload.count,
         nextPokemonsPage: action.payload.next,
-        previousPokemonsPage: action.payload.previous,
         loading: false,
         pokemonsList: action.payload.results,
+        error: "",
+      };
+    case PokemonsActionsTypes.FETCH_POKEMONS_ON_SCROLL_FULFILLED:
+      return {
+        ...state,
+        nextPokemonsPage: action.payload.next,
+        loading: false,
+        pokemonsList: [...state.pokemonsList].concat(action.payload.results),
         error: "",
       };
     case PokemonsActionsTypes.FETCH_POKEMONS_REJECTED:
       return {
         ...state,
-        pokemonsCount: 0,
         nextPokemonsPage: "",
-        previousPokemonsPage: "",
         loading: false,
         pokemonsList: [],
         error: action.payload,

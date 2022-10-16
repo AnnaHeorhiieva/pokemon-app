@@ -33,6 +33,7 @@
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/default-param-last": "off",
     "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/naming-convention": "off"
+    "@typescript-eslint/naming-convention": "off",
+    "react/require-default-props": "off"
   }
 }

@@ -28,9 +28,9 @@ export function useInfiniteScroll<
   const { urlForInitialRequest, urlForNextRequest } = apiUrls;
   const { actionCreator, initialUpdater, onScrollUpdater } = updaters;
 
-  const dispatch = useAppDispatch();
-
   const observedElementRef = useGenericElementRef<ObservedElement>();
+
+  const dispatch = useAppDispatch();
 
   const handleObserver = useCallback(
     (entries: any) => {
@@ -40,13 +40,13 @@ export function useInfiniteScroll<
         dispatch(actionCreator(urlForNextRequest, onScrollUpdater));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [dispatch, urlForNextRequest],
+    [dispatch, urlForNextRequest, actionCreator],
   );
 
   useEffect(() => {
     dispatch(actionCreator(urlForInitialRequest, initialUpdater));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, urlForInitialRequest]);
+  }, [dispatch, urlForInitialRequest, actionCreator]);
 
   useEffect(() => {
     const target = observedElementRef.current;

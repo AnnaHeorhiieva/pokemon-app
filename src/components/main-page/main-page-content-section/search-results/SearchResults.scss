@@ -1,0 +1,14 @@
+@use "utils/styles/mixins";
+
+.search-results-container {
+  @include mixins.flex-container(column, flex-start, flex-start);
+  flex-basis: auto;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 20px 2%;
+  padding-bottom: 0;
+  @media (max-width: 600px) {
+    padding: 20px 15px;
+  }
+}

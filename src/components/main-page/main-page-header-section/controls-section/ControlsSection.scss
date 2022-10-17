@@ -1,0 +1,11 @@
+@use "utils/styles/mixins";
+
+.controls-section-container {
+  @include mixins.flex-container(row, flex-end, center);
+  width: 30%;
+  padding: 0;
+  @media (max-width: 600px) {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

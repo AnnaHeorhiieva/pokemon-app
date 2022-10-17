@@ -1,0 +1,16 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.clear-button {
+  $properties-on-hover: (
+    background-color: variables.$pointer-bg-color-hover,
+    color: variables.$accent-bg-color-hover,
+  );
+  @include mixins.on-hover($properties-on-hover);
+  color: variables.$accent-bg-color;
+  @media (max-width: 600px) {
+    background-color: variables.$main-bg-color;
+    width: 48%;
+    border-radius: 40px;
+  }
+}

@@ -1,15 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 import "./PokemonCard.scss";
 
 interface PokemonCardProps {
   pokemonName: string;
+  pokemonType: string;
 }
 
-function PokemonCard({ pokemonName }: PokemonCardProps) {
+function PokemonCard({ pokemonName, pokemonType }: PokemonCardProps) {
   const navigate = useNavigate();
 
   function handleCardClick() {
@@ -18,7 +22,15 @@ function PokemonCard({ pokemonName }: PokemonCardProps) {
 
   return (
     <Card className="pokemon-card" onClick={handleCardClick}>
-      {pokemonName}
+      <Container className="pokemon-card-text-container">
+        <Typography className="pokemon-card-text">
+          Name: {pokemonName}
+        </Typography>
+        <Typography className="pokemon-card-text">
+          Type: {pokemonType}
+        </Typography>
+      </Container>
+      <Button className="see-more-button">see more</Button>
     </Card>
   );
 }

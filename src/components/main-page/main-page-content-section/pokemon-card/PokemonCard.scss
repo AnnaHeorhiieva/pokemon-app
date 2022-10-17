@@ -2,17 +2,56 @@
 @use "utils/styles/variables";
 
 .pokemon-card {
-  $pokemon-card-font: 0.8rem, 700, variables.$accent-bg-color, null, capitalize;
-  @include mixins.font-styles($pokemon-card-font...);
-  width: 100%;
-  padding: 2%;
-  margin-bottom: 20px;
-  border-radius: 40px;
-  box-shadow: none;
+  @include mixins.flex-container(row, flex-start, center);
   background-color: variables.$main-bg-color;
   border: 1px solid variables.$accent-border-color;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  min-height: 65px;
+  padding: 2% 20px;
+  box-shadow: none;
   cursor: pointer;
+  width: 100%;
   &:last-child {
     margin-bottom: 0;
+  }
+
+  .pokemon-card-text-container {
+    @include mixins.flex-container(row, flex-start, center);
+    padding: 0;
+
+    .pokemon-card-text {
+      $pokemon-card-font: 0.8rem, 700, variables.$accent-bg-color, null,
+        capitalize;
+      @include mixins.font-styles($pokemon-card-font...);
+      margin-right: 20px;
+      &:nth-child(2) {
+        color: variables.$accent-border-color;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .see-more-button {
+    $pokemon-card-font: 0.6rem, 600, variables.$default-font-color, null,
+      capitalize;
+    @include mixins.font-styles($pokemon-card-font...);
+    color: variables.$accent-bg-color;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+    background-color: transparent;
+    visibility: hidden;
+    user-select: none;
+    opacity: 0;
+    padding: 0;
+    @media (max-width: 600px) {
+      color: variables.$font-color-pale;
+    }
+  }
+
+  &:hover > .see-more-button {
+    visibility: visible;
+    opacity: 1;
   }
 }

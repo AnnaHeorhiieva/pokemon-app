@@ -4,8 +4,13 @@
 .main-page-header-section {
   @include mixins.flex-container(row, flex-start, center);
   background-color: variables.$secondary-bg-color;
+  box-shadow: variables.$header-box-shadow;
   position: fixed;
   height: min-content;
   padding: 12px 23px;
   z-index: 100;
+  @media (max-width: 600px) {
+    @include mixins.flex-container(column, flex-start, flex-start);
+    padding: 12px 15px;
+  }
 }

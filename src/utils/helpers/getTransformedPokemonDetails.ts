@@ -3,7 +3,7 @@ import {
   PokemonAbility,
   PokemonMove,
   PokemonStat,
-} from "store/pokemon/types";
+} from "utils/types/types";
 import { SvgIcon } from "@mui/material";
 
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";

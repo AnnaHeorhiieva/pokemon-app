@@ -1,5 +1,4 @@
 @use "utils/styles/mixins";
-@use "utils/styles/variables";
 
 .secondary-detail-container {
   @include mixins.flex-container(column, flex-start, flex-start);

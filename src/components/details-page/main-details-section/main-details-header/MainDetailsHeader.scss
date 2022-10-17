@@ -3,8 +3,12 @@
 
 .main-details-header {
   @include mixins.flex-container(row, flex-start, center);
-  padding: 0;
   margin-bottom: 50px;
+  min-height: 95px;
+  padding: 0;
+  @media (max-width: 900px) {
+    margin-bottom: 20px;
+  }
 
   .main-details-page-pointer {
     $properties-on-hover: (
@@ -13,20 +17,25 @@
     );
     @include mixins.flex-container(row, center, center);
     @include mixins.on-hover($properties-on-hover);
+    color: variables.$accent-bg-color;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
-    color: variables.$accent-bg-color;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   .pokemon-photo {
     border-radius: 50%;
-    margin-right: 20px;
   }
 
   .pokemon-name {
-    $pokemon-name-font: 2rem, 800, variables.$accent-bg-color, null, null, 56px;
+    $pokemon-name-font: 1.4rem, 800, variables.$accent-bg-color, null, null,
+      56px;
     @include mixins.font-styles($pokemon-name-font...);
   }
 }

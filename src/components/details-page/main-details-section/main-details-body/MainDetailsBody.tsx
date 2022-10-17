@@ -1,7 +1,7 @@
 import React from "react";
 
-import { MainBodyPokemonDetails } from "utils/helpers/getTransformedPokemonDetails";
 import { addIndexToString } from "utils/helpers/addIndexToString";
+import { MainBodyPokemonDetails } from "utils/helpers/getTransformedPokemonDetails";
 
 import Container from "@mui/material/Container";
 import MainDetail from "./main-detail/MainDetail";
@@ -13,11 +13,10 @@ interface MainDetailsBodyProps {
 }
 
 function MainDetailsBody({ mainBodyDetails }: MainDetailsBodyProps) {
-  const mainBodyDetailsArray = Object.entries(mainBodyDetails)?.map((arr) =>
-    arr.flat(),
-  );
+  const detailsMapCb = (arr: any) => arr.flat();
+  const mainBodyDetailsArr = Object.entries(mainBodyDetails)?.map(detailsMapCb);
 
-  const renderMainDetails = mainBodyDetailsArray?.map(
+  const renderMainDetails = mainBodyDetailsArr?.map(
     ([mainDetailTitle, mainDetailValue, icon], index) => {
       const key = addIndexToString(mainDetailTitle, index);
       return (

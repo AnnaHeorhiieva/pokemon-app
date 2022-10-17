@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 import { MainHeaderPokemonDetails } from "utils/helpers/getTransformedPokemonDetails";
 
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import Container from "@mui/material/Container";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import Typography from "@mui/material/Typography";
 
 import "./MainDetailsHeader.scss";

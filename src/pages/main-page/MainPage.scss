@@ -1,8 +1,9 @@
 @use "utils/styles/mixins";
+@use "utils/styles/variables";
 
 .main-page-container {
   @include mixins.flex-container(column, flex-start, center);
-  background-color: #fff;
+  background-color: variables.$main-bg-color;
   width: 100%;
   height: 100vh;
   padding: 0;

@@ -15,7 +15,7 @@ function Routes() {
       <Route
         path="/:pokemonName"
         element={
-          <React.Suspense fallback={<Spinner />}>
+          <React.Suspense fallback={<Spinner size={10} />}>
             <LazyDetailsPage />
           </React.Suspense>
         }

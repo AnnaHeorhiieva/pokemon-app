@@ -3,10 +3,11 @@
 
 .main-detail-container {
   @include mixins.flex-container(row, flex-start, center);
-  @include mixins.box-spacing(5% 7% 5% 7%, 0 0 4vh 0);
   min-height: fit-content;
   background-color: #ffffff;
+  margin-bottom: 40px;
   border-radius: 40px;
+  padding: 20px;
 
   .main-detail-icon-container {
     width: 45px;
@@ -16,9 +17,9 @@
 
     .main-detail-icon-background {
       @include mixins.flex-container(row, center, center);
+      background-color: variables.$accent-bg-color;
       width: 45px;
       height: 45px;
-      background-color: variables.$accent-bg-color;
       border-radius: 50%;
 
       svg {

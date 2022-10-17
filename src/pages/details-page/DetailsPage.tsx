@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "store/reduxHooks";
 import { useParams } from "react-router-dom";
 
+import { configurePokemonRequestUrl } from "utils/helpers/configureRequestUrl";
 import { getTransformedPokemonDetails } from "utils/helpers/getTransformedPokemonDetails";
-import { fetchPokemon } from "store/pokemon/thunks";
-import { pokemonDetailsSelector } from "store/pokemon/selectors";
+import { fetchPokemon } from "store/pokemons/thunks";
+import { pokemonDetailsSelector } from "store/pokemons/selectors";
 
 import Container from "@mui/material/Container";
 import MainDetailsSection from "components/details-page/main-details-section/MainDetailsSection";
@@ -22,8 +23,9 @@ function DetailsPage() {
   const { mainDetails, secondaryDetails } = pokemonDetails;
 
   useEffect(() => {
-    const endpoint = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    const endpoint = configurePokemonRequestUrl(pokemonName);
     dispatch(fetchPokemon(endpoint));
+    window.scrollTo(0, 0);
   }, [dispatch, pokemonName]);
 
   return (

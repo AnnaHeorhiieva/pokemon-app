@@ -16,7 +16,6 @@
 
 @mixin box-spacing($paddings: 0 0 0 0, $margins: 0 0 0 0) {
   $sides: top right bottom left;
-
   @each $side in $sides {
     $index: list.index($sides, $side);
     padding-#{$side}: list.nth($paddings, $index);

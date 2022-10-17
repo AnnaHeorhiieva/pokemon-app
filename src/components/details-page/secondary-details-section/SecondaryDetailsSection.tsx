@@ -1,7 +1,7 @@
 import React from "react";
 
-import { SecondaryPokemonDetails } from "utils/helpers/getTransformedPokemonDetails";
 import { addIndexToString } from "utils/helpers/addIndexToString";
+import { SecondaryPokemonDetails } from "utils/helpers/getTransformedPokemonDetails";
 
 import Container from "@mui/material/Container";
 import SecondaryDetail from "./secondary-detail/SecondaryDetail";

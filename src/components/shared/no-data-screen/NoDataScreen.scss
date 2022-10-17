@@ -1,0 +1,18 @@
+@use "utils/styles/mixins";
+@use "utils/styles/variables";
+
+.no-data-screen-container {
+  @include mixins.flex-container(column, center, center);
+  height: fit-content;
+  padding: 30px;
+
+  .no-data-screen-message {
+    @include mixins.font-styles(1rem, 600, variables.$input-text-font-color);
+    display: inline-block;
+    text-align: center;
+  }
+
+  img {
+    transform: scale(0.7);
+  }
+}

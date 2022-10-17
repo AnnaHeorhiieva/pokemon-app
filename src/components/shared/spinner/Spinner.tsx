@@ -2,8 +2,6 @@ import React from "react";
 
 import BeatLoader from "react-spinners/BeatLoader";
 
-import "./Spinner.scss";
-
 interface SpinnerProps {
   color?: string;
   size?: number;
@@ -11,10 +9,14 @@ interface SpinnerProps {
   className?: string;
 }
 
+const DEFAULT_SPINNER_COLOR = "#F2726C";
+const DEFAULT_SPINNER_SIZE = 6;
+const DEFAULT_SPINNER_SPEED = 1.3;
+
 function Spinner({
-  color = "#F2726C",
-  size = 10,
-  speedMultiplier = 1.3,
+  color = DEFAULT_SPINNER_COLOR,
+  size = DEFAULT_SPINNER_SIZE,
+  speedMultiplier = DEFAULT_SPINNER_SPEED,
   className,
 }: SpinnerProps): JSX.Element {
   return (

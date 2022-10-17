@@ -1,0 +1,6 @@
+@use "utils/styles/mixins";
+
+.loading-screen-container {
+  @include mixins.flex-container(column, center, center);
+  height: 90vh;
+}

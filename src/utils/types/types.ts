@@ -247,33 +247,3 @@ export interface Pokemon {
   types: PokemonType[];
   past_types: PokemonTypePast[];
 }
-
-export interface PokemonState {
-  pokemon: Pokemon;
-  error: string;
-}
-
-export enum PokemonActionsTypes {
-  FETCH_POKEMON_PENDING = "pokemon/fetchPokemon/pending",
-  FETCH_POKEMON_FULFILLED = "pokemon/fetchPokemon/fulfilled",
-  FETCH_POKEMON_REJECTED = "pokemon/fetchPokemon/rejected",
-}
-
-export interface FetchPokemonPendingAction {
-  type: PokemonActionsTypes.FETCH_POKEMON_PENDING;
-}
-
-export interface FetchPokemonFulfilledAction {
-  type: PokemonActionsTypes.FETCH_POKEMON_FULFILLED;
-  payload: Pokemon;
-}
-
-export interface FetchPokemonRejectedAction {
-  type: PokemonActionsTypes.FETCH_POKEMON_REJECTED;
-  payload: string;
-}
-
-export type PokemonActions =
-  | FetchPokemonPendingAction
-  | FetchPokemonFulfilledAction
-  | FetchPokemonRejectedAction;

@@ -2,11 +2,9 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk, { ThunkMiddleware } from "redux-thunk";
 
-import pokemonReducer from "./pokemon/reducer";
 import pokemonsReducer from "./pokemons/reducer";
 
 export const rootReducer = combineReducers({
-  pokemon: pokemonReducer,
   pokemons: pokemonsReducer,
 });
 

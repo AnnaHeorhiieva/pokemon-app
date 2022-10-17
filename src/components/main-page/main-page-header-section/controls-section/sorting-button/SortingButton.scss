@@ -18,4 +18,18 @@
     border-radius: 40px;
     margin-right: 0;
   }
+
+  &-active {
+    @extend .sorting-button;
+    $properties-on-hover: (
+      background-color: variables.$accent-bg-color,
+      color: variables.$main-bg-color,
+    );
+    @include mixins.on-hover($properties-on-hover);
+    background-color: variables.$accent-bg-color;
+    color: variables.$main-bg-color;
+    @media (max-width: 600px) {
+      background-color: variables.$accent-bg-color;
+    }
+  }
 }

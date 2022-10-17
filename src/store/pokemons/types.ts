@@ -1,5 +1,11 @@
 import { Pokemon, NamedAPIResource } from "utils/types/types";
 
+export enum MainPageMode {
+  COMMON = "common",
+  SORT = "sort",
+  SEARCH = "search",
+}
+
 export interface PokemonsPokeApi {
   count: number;
   next: string;
@@ -36,7 +42,7 @@ export interface PokemonsState {
   pokemons: AllPokemonsState;
   currentPokemon: CurrentPokemonState;
   searchedPokemon: SearchedPokemonState;
-  mainPageMode: string;
+  mainPageMode: MainPageMode;
 }
 
 export enum PokemonsActionsTypes {
@@ -132,7 +138,7 @@ export interface FetchSearchedPokemonRejectedAction {
 
 export interface SetMainPageModeAction {
   type: PokemonsActionsTypes.SET_MAIN_PAGE_MODE;
-  payload: string;
+  payload: MainPageMode;
 }
 
 export interface ResetPokemonsStateAction {

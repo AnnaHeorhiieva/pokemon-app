@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAppDispatch } from "store/reduxHooks";
 
+import { MainPageMode } from "store/pokemons/types";
 import { configurePokemonRequestUrl } from "utils/helpers/configureRequestUrl";
 import { fetchSearchedPokemon } from "store/pokemons/thunks";
 import { setMainPageMode } from "store/pokemons/actionCreators";
@@ -25,7 +26,6 @@ type EnterClickEvent = React.KeyboardEvent<HTMLInputElement>;
 
 const DEFAULT_POKEMON = "";
 const PLACEHOLDER = "Search pokemon by name...";
-const SEARCH = "search";
 
 function SearchFieldSection() {
   const [pokemonQueried, setPokemonQueried] = useState<string>(DEFAULT_POKEMON);
@@ -40,7 +40,7 @@ function SearchFieldSection() {
   function handleSearchButtonClick() {
     const pokemonQueriedLowercased = pokemonQueried.toLowerCase();
     const url = configurePokemonRequestUrl(pokemonQueriedLowercased);
-    dispatch(setMainPageMode(SEARCH));
+    dispatch(setMainPageMode(MainPageMode.SEARCH));
     dispatch(fetchSearchedPokemon(url));
     setPokemonQueried(DEFAULT_POKEMON);
   }

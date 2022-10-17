@@ -19,6 +19,7 @@ import {
   FetchSortedPokemonsRejectedAction,
   ResetPokemonsStateAction,
   FetchDetailedPokemonsRejectedAction,
+  MainPageMode,
 } from "./types";
 
 export function fetchPokemonsPending(): FetchPokemonsPendingAction {
@@ -144,7 +145,7 @@ export function fetchSearchedPokemonRejected(
   };
 }
 
-export function setMainPageMode(mode: string): SetMainPageModeAction {
+export function setMainPageMode(mode: MainPageMode): SetMainPageModeAction {
   return {
     type: PokemonsActionsTypes.SET_MAIN_PAGE_MODE,
     payload: mode,

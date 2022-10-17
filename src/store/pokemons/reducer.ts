@@ -2,7 +2,12 @@ import produce from "immer";
 
 import { sortPokemonsByType } from "utils/helpers/sortPokemonsByType";
 import { Pokemon } from "utils/types/types";
-import { PokemonsState, PokemonsActions, PokemonsActionsTypes } from "./types";
+import {
+  PokemonsState,
+  PokemonsActions,
+  PokemonsActionsTypes,
+  MainPageMode,
+} from "./types";
 
 const initialState = {
   pokemons: {
@@ -22,7 +27,7 @@ const initialState = {
     error: "",
     loading: false,
   },
-  mainPageMode: "common",
+  mainPageMode: MainPageMode.COMMON,
 };
 
 export default function pokemonsReducer(
